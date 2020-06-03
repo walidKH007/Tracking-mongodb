@@ -3,55 +3,72 @@
 <head>
 <meta charset="utf-8">
 <title>Navbar Example</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<link rel="stylesheet"	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"	href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="fonts/iconic/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" type="text/css"	href="fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendor/css-hamburgers/hamburgers.min.css">
+<link rel="stylesheet" type="text/css"	href="vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendor/animsition/css/animsition.min.css">
+<link rel="stylesheet" type="text/css"	href="vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css"	href="vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" type="text/css"	href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="css/home_css.css">
+<!-- ============================================================================================= -->
+<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+<!-- ============================================================================================= -->
 
 
-<link rel="stylesheet" type="text/css"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+<link rel="stylesheet" type="text/css"	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css"
-	href="vendor/datepicker/dist/bootstrap-clockpicker.min.css">
-<link rel="stylesheet" type="text/css"
-	href="vendor/datepicker/dist/bootstrap-datepicker.css">
+	
+<link rel="stylesheet" type="text/css"	href="vendor/datepicker/dist/bootstrap-clockpicker.min.css">
+<link rel="stylesheet" type="text/css"	href="vendor/datepicker/dist/bootstrap-datepicker.css">
 
 
 
 </head>
 <body>
+
+<%
+
+String name = (String) session.getAttribute("full_name");
+String user_id = (String) session.getAttribute("user_id");
+
+if (name == null) {
+	response.sendRedirect("/login");
+
+}
+
+
+%>
+
 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 		<a class="login100-form-title p-b-49 " href="#">Tracking</a>
 
 		<!-- Left -->
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item"><a class="nav-link" >statistic</a></li>
-			<li class="nav-item"><a class="nav-link">chihaja</a></li>
+			<li class="nav-item">
+				<a class="nav-link" href="home" >
+				New Activity
+
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="statistics">
+				Statistic				
+				</a>
+			</li>
 		</ul>
 		<!-- Right -->
 		<ul class="navbar-nav ml-auto">
@@ -59,14 +76,8 @@
 				<div class="nav-link">
 
 					<%
-						String name = (String) session.getAttribute("full_name");
-						String user_id = (String) session.getAttribute("user_id");
-						if (name == null) {
-							response.sendRedirect("/login");
-
-						} else {
 							out.print(name);
-						}
+					
 					%>
 
 				</div>

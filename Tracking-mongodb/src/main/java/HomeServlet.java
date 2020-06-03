@@ -10,6 +10,7 @@ import java.io.OutputStream;
 import java.lang.Character.Subset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -102,18 +103,44 @@ public class HomeServlet extends HttpServlet {
 		
 		List<Document> position = new ArrayList<>();
 		
-		for (JSONObject string : getPosition(file.getAbsolutePath())) {
+		List<JSONObject> pos_list = getPosition(file.getAbsolutePath());
+		
+		for (JSONObject string : pos_list) {
 
 			position.add(new Document("Latitude", string.getDouble("LatitudeDegrees")).append("Longitude",
 					string.getDouble("LongitudeDegrees")));
 
-		}
 
+		}
+		
+//		System.out.println("\n ----------***************************************------------------- \n");
+//		
+//		System.out.println("lat 0 : "+pos_list.get(0).get("LatitudeDegrees")+", lon 0 : "+pos_list.get(0).get("LongitudeDegrees"));
+//		
+//		System.out.println("lat last : "+pos_list.get(pos_list.size() - 1).get("LatitudeDegrees")+", lon last : "+pos_list.get(pos_list.size() - 1).get("LongitudeDegrees"));
+//		
+		double lat1 = (double) pos_list.get(0).get("LatitudeDegrees");
+		double long1 = (double) pos_list.get(0).get("LongitudeDegrees");
+		
+		double lat2 = (double) pos_list.get(pos_list.size() - 1).get("LatitudeDegrees");
+		double long2 = (double) pos_list.get(pos_list.size() - 1).get("LongitudeDegrees");
+		
+	    int dist = (int) distance(lat1, long1, lat2, long2,"K");
+	    
+//	    System.out.println("\ndistance = "+dist);
+//
+//		
+//		System.out.println("\n ----------***************************************------------------- \n");
+		
+//	    NumberFormat nf = NumberFormat.getInstance();
+//        nf.setMaximumFractionDigits(3);
+        
+	    
 		// create Document
 		Document activity = new Document("_id", new ObjectId());
 		activity.append("user_id", id).append("full_name", full_name).append("date", date)
 				.append("time_debut", time_debut).append("time_fin", time_fin).append("sport", sport)
-				.append("position", position);
+				.append("position", position).append("distance", dist);
 
 		activity_collection.insertOne(activity);
 
@@ -140,7 +167,7 @@ public class HomeServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("full_name", full_name);
 		session.setAttribute("user_id", id);
-		session.setAttribute("position", getPosition(file.getAbsolutePath()).toString());
+		session.setAttribute("position", pos_list.toString());
 		response.sendRedirect("/map");
 
 		System.out.println(file.delete());
@@ -204,8 +231,9 @@ public class HomeServlet extends HttpServlet {
 			listdata.add(obj.getJSONObject(i).getJSONObject("Position"));
 		}
 		
-
+		
 		for (JSONObject string : listdata) {
+			
 
 			position.add(new Document("Latitude", string.getDouble("LatitudeDegrees")).append("Longitude",
 					string.getDouble("LongitudeDegrees")));
@@ -218,5 +246,25 @@ public class HomeServlet extends HttpServlet {
 		return listdata;
 
 	}
+	
+	private static double distance(double lat1, double lon1, double lat2, double lon2, String unit) {
+		if ((lat1 == lat2) && (lon1 == lon2)) {
+			return 0;
+		}
+		else {
+			double theta = lon1 - lon2;
+			double dist = Math.sin(Math.toRadians(lat1)) * Math.sin(Math.toRadians(lat2)) + Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) * Math.cos(Math.toRadians(theta));
+			dist = Math.acos(dist);
+			dist = Math.toDegrees(dist);
+			dist = dist * 60 * 1.1515;
+			if (unit.equals("K")) {
+				dist = dist * 1.609344;
+			} else if (unit.equals("N")) {
+				dist = dist * 0.8684;
+			}
+			return (dist);
+		}
 
+}
+	
 }

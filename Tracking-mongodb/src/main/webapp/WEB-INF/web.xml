@@ -22,11 +22,18 @@
 		<servlet-name>logout</servlet-name>
 		<servlet-class>LogoutServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet>
 		<servlet-name>map</servlet-name>
 		<servlet-class>MapServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>StatisticsServlet</servlet-name>
+		<display-name>StatisticsServlet</display-name>
+		<description></description>
+		<servlet-class>StatisticsServlet</servlet-class>
+	</servlet>
+
 
 
 	<servlet-mapping>
@@ -48,10 +55,16 @@
 		<servlet-name>logout</servlet-name>
 		<url-pattern>/logout</url-pattern>
 	</servlet-mapping>
-	
-		<servlet-mapping>
+
+	<servlet-mapping>
 		<servlet-name>map</servlet-name>
 		<url-pattern>/map</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>StatisticsServlet</servlet-name>
+		<url-pattern>/statistics</url-pattern>
+	</servlet-mapping>
+
+
 
 </web-app>

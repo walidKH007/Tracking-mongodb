@@ -2,34 +2,32 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Navbar Example</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<title>Activity</title>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="fonts/iconic/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendor/css-hamburgers/hamburgers.min.css">
+<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendor/animsition/css/animsition.min.css">
+<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="css/home_css.css">
+<!-- ============================================================================================= -->
+<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+<!-- ============================================================================================= -->
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
@@ -59,8 +57,8 @@ html, body {
 
 		<!-- Left -->
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item"><a class="nav-link">statistic</a></li>
-			<li class="nav-item"><a class="nav-link">chihaja</a></li>
+			<li class="nav-item"><a class="nav-link" href="home">New Activity</a></li>
+			<li class="nav-item"><a class="nav-link" href="statistic">Statistic</a></li>
 		</ul>
 		<!-- Right -->
 		<ul class="navbar-nav ml-auto">
@@ -102,9 +100,7 @@ html, body {
 	  if (navigator.geolocation) {
 	    navigator.geolocation.getCurrentPosition(showPosition);
 	    
-	  } else {
-	    //x.innerHTML = "Geolocation is not supported by this browser.";
-	    
+	  } else {   
 	    windows.alert("Geolocation is not supported by this browser.");
 	  }
 	}
@@ -168,16 +164,7 @@ html, body {
 	</script>
 
 
-
-
-
-
-
-
-
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZegaxxbGuj6L6tt-nctcgAbo9lcZSDqo&callback=initMap"
-		async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZegaxxbGuj6L6tt-nctcgAbo9lcZSDqo&callback=initMap" async defer></script>
 	
 </body>
 </html>
