@@ -164,7 +164,7 @@ html, body {
 	</script>
 
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZegaxxbGuj6L6tt-nctcgAbo9lcZSDqo&callback=initMap" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=<API-KEY>&callback=initMap" async defer></script>
 	
 </body>
 </html>
