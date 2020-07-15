@@ -4,7 +4,7 @@ Application de Tracking d'une activité sportife avec J2EE et MongoDB
 
 ## Login (LoginServlet):
 
-![image](/images/login.png "login")
+![image](./images/login.png "login")
 
 - doGet :
 
