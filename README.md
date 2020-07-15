@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Tracking-mongodb
 
 Application de Tracking d'une activité sportife avec J2EE et MongoDB
@@ -406,9 +405,3 @@ jsonData.toString()
 %>
 <%= firstChart.render() %>
 ````
-
-
-=======
-# Tracking-mongodb
-Application de Tracking d'une activité sportife avec J2EE et MongoDB
->>>>>>> d84523f13bf1b7f6d7319adf875b966b36ecfe62
