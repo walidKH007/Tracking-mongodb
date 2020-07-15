@@ -1,6 +1,7 @@
-# Tracking
+<<<<<<< HEAD
+# Tracking-mongodb
 
-Application de Tracking d'une activité sportife avec J2EE et MongoDB.
+Application de Tracking d'une activité sportife avec J2EE et MongoDB
 
 ## Login (LoginServlet):
 
@@ -407,3 +408,7 @@ jsonData.toString()
 ````
 
 
+=======
+# Tracking-mongodb
+Application de Tracking d'une activité sportife avec J2EE et MongoDB
+>>>>>>> d84523f13bf1b7f6d7319adf875b966b36ecfe62
