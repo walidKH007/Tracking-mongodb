@@ -4,7 +4,7 @@ Application de Tracking d'une activité sportife avec J2EE et MongoDB
 
 ## Login (LoginServlet):
 
-![image](images/login.png "login")
+![image](images/login.PNG "login")
 
 - doGet :
 
@@ -79,7 +79,7 @@ else {
 
 ## Sign Up (SignupServlet):
 
-![image](images/signup.png "sign up")
+![image](images/signup.PNG "sign up")
 
 
 - doPost :
@@ -166,7 +166,7 @@ System.out.println(e.getMessage());
 
 ## Activité
 
-![image](images/activite.png "Activité")
+![image](images/activite.PNG "Activité")
 
 This phase will allow the user to create his Activity, fill in the date and time of the start and end of his activity, as well as his route.
 
@@ -265,7 +265,7 @@ return (dist);
 
 ## MAP 
 
-![image](images/map.png "Activité")
+![image](images/map.PNG "Activité")
 
 - map.jsp
 
@@ -322,7 +322,7 @@ bermudaTriangleLS12.setMap(map);
 
 ## statistique 
 
-![image](images/static.png "static")
+![image](images/static.PNG "static")
 
 
 In this phase we use the library FusionCharts to generate the statistics graph.
